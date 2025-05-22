@@ -1,0 +1,14 @@
+affinity:
+  nodeAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/e2e-az-name
+          operator: In
+          values:
+          - az1
+tolerations:
+- key: "dedicated"
+  operator: "Equal"
+  value: "docker-helloWorld"
+  effect: "NoSchedule"
