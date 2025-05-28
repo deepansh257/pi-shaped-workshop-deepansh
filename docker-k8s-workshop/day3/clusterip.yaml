@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: docker-helloworld-clusterip
+spec:
+  type: ClusterIP
+  selector:
+    app: docker-helloworld
+  ports:
+    - port: 80
+      targetPort: 3000
+  
