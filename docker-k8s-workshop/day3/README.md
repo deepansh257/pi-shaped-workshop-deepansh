@@ -1,0 +1,5 @@
+## 1. How would you expose an internal microservice (e.g., user-auth) differently than a public-facing frontend in a Kubernetes-based product?
+### To maintain security and facilitate internal communication, internal microservices such as user-auth should be exposed via ClusterIP or private networking, restricting their accessibility to within the cluster. On the other hand, in order to permit access from outside the cluster, public-facing frontends must be externally exposed using NodePort, LoadBalancer, or Ingress.
+
+## 2. Why might a product use Ingress instead of directly exposing each microservice via LoadBalancer?
+### Ingress consolidates access, keeping costs low and simplifying set-up by allowing complete routing to multiple services through single external IP and single domain. Ingress capabilities, such as path or host-based routing, SSL termination, and centralized traffic management, allows for more sophisticated routing compared to exposing each microservice with LoadBalancer services.
