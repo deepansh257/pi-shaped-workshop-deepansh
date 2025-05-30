@@ -1,0 +1,27 @@
+frontend:
+  image: node:18
+  resources:
+    limits:
+      cpu: "250m"
+      memory: "128Mi"
+    requests:
+      cpu: "100m"
+      memory: "64Mi"
+  replicas: 2
+
+backend:
+  image: python:3.11-slim
+  resources:
+    limits:
+      cpu: "300m"
+      memory: "256Mi"
+    requests:
+      cpu: "150m"
+      memory: "128Mi"
+  replicas: 2
+
+hpa:
+  enabled: true
+  cpuUtilization: 50
+  minReplicas: 2
+  maxReplicas: 5

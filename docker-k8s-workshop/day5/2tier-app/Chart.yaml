@@ -1,0 +1,4 @@
+apiVersion: v2
+name: 2tier-app
+description: A 2-tier app with HPA, probes, and resource limits
+version: 0.1.0
